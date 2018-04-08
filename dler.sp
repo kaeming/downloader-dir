@@ -91,11 +91,10 @@ void LoadFile(char[] sPath)
 {
 	AddFileToDownloadsTable(sPath)
 	int size = strlen(sPath)
-	if(!strcmp(sPath[size-4], ".mdl")) // Надеемся, что файл в models/
+	if(!strcmp(sPath[size-4], ".mdl"))
 		PrecacheModel(sPath)
 	else if(!strcmp(sPath[size-4], ".mp3"))
 	{
-		// Подразумивается, что файл находится в sound/
 		if(FakePrecache)
 		{
 			sPath[5] = '*'
